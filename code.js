@@ -1,26 +1,14 @@
 'use strict'
+document.addEventListener("DOMContentLoaded", () => document.write(task4()));
 
-function task1(num = 10) {
-
-  //Factorial 
-  let count = num;
-  let output = 1;
-  while (count !== 1) {
-    output *= count;
-    --count;
-  }
-  return output;
+function task4(str = 'Visual Studio Code'){
+  //Найти самое длинное слово в строке
+  const arrWords = str.split(' ');
+  const arrLengths = arrWords.map((item, index, arr) => item.length);
+  return Math.max.apply(null, arrLengths);
 }
-
-function task2(str = 'Hello World and Coders') {
-
-  //String reverse
-  return str.split("").reverse().join("");
-}
-
 
 function task3(str = 'Amelie Lens all night long @ Labyrinth Club 2017') {
-
   //Replace every letter in the string with the letter following it in the alphabet (ie. c becomes d, z becomes a). Then capitalize every vowel in this new string (a, e, i, o, u) and finally return this modified string. 
   Array.prototype.taskChange = function () {
     const input = this;
@@ -38,15 +26,21 @@ function task3(str = 'Amelie Lens all night long @ Labyrinth Club 2017') {
     }
     return output;
   }
-  return [str, str.split('').taskChange().join('')];
+  return str.split('').taskChange().join('');
 }
 
-//In the parameters you need to specify the function to be checked (ie. print(output = <your_function>())).
-function print(output = task3()) {
-  const div = document.createElement('div');
-  for (let elem of output) {
-    div.innerHTML += `${elem} <br/>`;
-  }
-  document.body.appendChild(div);
+function task2(str = 'Hello World and Coders') {
+  //String reverse
+  return str.split("").reverse().join("");
 }
-document.addEventListener("DOMContentLoaded", print());
+
+function task1(num = 10) {
+  //Factorial 
+  let count = num;
+  let output = 1;
+  while (count !== 1) {
+    output *= count;
+    --count;
+  }
+  return output;
+}
