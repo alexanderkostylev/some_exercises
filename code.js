@@ -1,14 +1,37 @@
 'use strict'
-document.addEventListener("DOMContentLoaded", () => document.write(task4()));
+document.addEventListener("DOMContentLoaded", () => document.write(easyTask6()));
 
-function task4(str = 'Visual Studio Code'){
-  //Найти самое длинное слово в строке
+function easyTask6(str = 'Simple graphics editor running on SVG') {
+  //Return longest word 
   const arrWords = str.split(' ');
-  const arrLengths = arrWords.map((item, index, arr) => item.length);
+  let maxLength = 0,
+    outWord;
+  for (let i = 0; i < arrWords.length; i++) {
+    if (arrWords[i].length > maxLength) {
+      maxLength = arrWords[i].length;
+      outWord = arrWords[i];
+    }
+  }
+  return outWord;
+}
+
+function easyTask5() {
+  //Return amount of arguments array
+  const arg = arguments.length !== 0 ? arguments : [5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
+  let sum = 0;
+  const _forEach = [].forEach;
+  _forEach.call(arg, ((item) => sum += item));
+  return sum;
+}
+
+function easyTask4(str = 'Visual Studio Code') {
+  //Return length of longest word 
+  const arrWords = str.split(' ');
+  const arrLengths = arrWords.map((item) => item.length);
   return Math.max.apply(null, arrLengths);
 }
 
-function task3(str = 'Amelie Lens all night long @ Labyrinth Club 2017') {
+function easyTask3(str = 'Amelie Lens all night long @ Labyrinth Club 2017') {
   //Replace every letter in the string with the letter following it in the alphabet (ie. c becomes d, z becomes a). Then capitalize every vowel in this new string (a, e, i, o, u) and finally return this modified string. 
   Array.prototype.taskChange = function () {
     const input = this;
@@ -29,12 +52,12 @@ function task3(str = 'Amelie Lens all night long @ Labyrinth Club 2017') {
   return str.split('').taskChange().join('');
 }
 
-function task2(str = 'Hello World and Coders') {
+function easyTask2(str = 'Hello World and Coders') {
   //String reverse
   return str.split("").reverse().join("");
 }
 
-function task1(num = 10) {
+function easyTask1(num = 10) {
   //Factorial 
   let count = num;
   let output = 1;
