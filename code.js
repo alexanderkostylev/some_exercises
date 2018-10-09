@@ -1,7 +1,19 @@
 'use strict'
-document.addEventListener("DOMContentLoaded", () => document.write(easyTask6()));
+document.addEventListener("DOMContentLoaded", () => document.write(easyTask7()));
 
-function easyTask6(str = 'Simple graphics editor running on SVG') {
+function easyTask7 (str = ' Words will be separated by only one space'){
+//Replace the first letter of each word with a large one.
+Array.prototype.toUpperCaseFirstСharacter = function (){
+  let arr = this;
+  for (let i = 0; i < arr.length; i++){
+    arr[i] === ' ' ? arr[i+1] = arr[i+1].toUpperCase() : null; 
+  }
+  return arr;
+}
+return str.split('').toUpperCaseFirstСharacter().join('');
+
+}
+  function easyTask6(str = 'Simple graphics editor running on SVG') {
   //Return longest word 
   const arrWords = str.split(' ');
   let maxLength = 0,
