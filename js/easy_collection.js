@@ -1,5 +1,33 @@
 "use strict"
-document.addEventListener("DOMContentLoaded", () => document.write(easyTask11()));
+document.addEventListener("DOMContentLoaded", () => document.write(easyTask14()));
+
+
+function easyTask14(n = 7) {
+  //fibonacci through recursion
+    return n <= 1 ? n : easyTask14(n - 1) + easyTask14(n - 2);
+}
+
+function easyTask13(num = 7) {
+  //fibonacci through temp variable 
+  let current = 1, prev = 0, temp;
+  let i = 1;
+    while (i < num){
+      temp = current + prev;
+      prev = current;
+      current = temp;
+      i++;
+    }
+  return current;
+}
+
+function easyTask12(num = 7) {
+  //fibonacci through array
+  let arr = [0, 1];
+  for (let i = 1; i < num; i++){
+    arr.push(arr[i]+ arr[i-1]);
+  }
+  return arr;
+}
 
 function easyTask11(num = 10) {
   //isPrime through recursion
@@ -28,7 +56,7 @@ function easyTask9(num = 6) {
 }
 
 function easyTask8(number = 9) {
-  //This kata is about multiplying a given number by eight if it is an even number and by nine otherwise. (CodeWars)
+  //This task is about multiplying a given number by eight if it is an even number and by nine otherwise. (CodeWars)
   return number % 2 == 0 ? number * 8 : number * 9;
 }
 
@@ -96,7 +124,7 @@ function easyTask3(str = 'Amelie Lens all night long @ Labyrinth Club 2017') {
   return str.split('').taskChange().join('');
 }
 
-function easyTask2(str = 'Hello World and Coders') {
+function easyTask2(str = 'Hello World and World') {
   //String reverse
   return str.split("").reverse().join("");
 }
