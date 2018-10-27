@@ -1,6 +1,11 @@
 "use strict"
-document.addEventListener("DOMContentLoaded", () => document.write(easyTask14()));
+document.addEventListener("DOMContentLoaded", () => document.write(easyTask15(3,1,5,7,1,6)));
 
+function easyTask15() {
+  //check exist number 3 in arguments
+  const args = Array.prototype.slice.call(arguments);
+  return args.indexOf(3) != -1;
+}
 
 function easyTask14(n = 7) {
   //fibonacci through recursion
