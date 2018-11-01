@@ -1,5 +1,15 @@
 "use strict"
-document.addEventListener("DOMContentLoaded", () => document.write(easyTask15(3,1,5,7,1,6)));
+document.addEventListener("DOMContentLoaded", () => document.write(easyTask17()));
+
+function easyTask17 (input = [1,1,2,2,3,4,4,5,5]){
+  // uniq via reduce method
+  return input.reduce((accumulator, value) => Array.from(accumulator).includes(value) ? accumulator : accumulator.concat(value), []);
+}
+
+function easyTask16(input = [[1],[[2,2]],3,3,3,[4,4,4,4]]){
+  //array expansion
+  return input.reduce((accumulator, current) => accumulator.concat(current));
+}
 
 function easyTask15() {
   //check exist number 3 in arguments
@@ -57,7 +67,7 @@ function easyTask10(num = 4) {
 function easyTask9(num = 6) {
   //factorial through recursion
   let n = num;
-  return n === 1 ? n : num *= easyTask9(num - 1);
+  return n <= 1 ? n : n *= easyTask9(num - 1);
 }
 
 function easyTask8(number = 9) {
@@ -75,7 +85,6 @@ function easyTask7(str = ' Words will be separated by only one space') {
     return arr;
   }
   return str.split('').toUpperCaseFirstСharacter().join('');
-
 }
 
 function easyTask6(str = 'Simple graphics editor running on SVG') {
