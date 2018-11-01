@@ -1,8 +1,14 @@
 "use strict"
-document.addEventListener("DOMContentLoaded", () => document.write(easyTask17()));
+document.addEventListener("DOMContentLoaded", () => document.write(easyTask18()));
+
+function easyTask18 (input = [1,1,2,2,3,4,4,5,5]){
+  // Returns the unique elements of an array
+  return input.filter((value, _, array) => array.indexOf(value) === array.lastIndexOf(value) ? value : null);
+}
 
 function easyTask17 (input = [1,1,2,2,3,4,4,5,5]){
-  // uniq via reduce method
+  // Returns a new array by removing duplicate values in self via reduce method
+  // or return input.filter((value) => ~ input.indexOf(value));
   return input.reduce((accumulator, value) => Array.from(accumulator).includes(value) ? accumulator : accumulator.concat(value), []);
 }
 
