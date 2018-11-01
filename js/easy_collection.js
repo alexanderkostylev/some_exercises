@@ -1,5 +1,21 @@
 "use strict"
-document.addEventListener("DOMContentLoaded", () => document.write(easyTask18()));
+document.addEventListener("DOMContentLoaded", () => document.write(easyTask19()));
+
+function easyTask19 (){
+  //Calling a function of type of foo(2)(3)()
+  function foo() {
+    var [result] = arguments;
+    return function f() {
+      if(arguments.length === 0) {
+        return result
+      } else {
+        result = result + arguments[0];
+        return f
+      }
+    }
+  }
+  return foo(2)(3)();
+}
 
 function easyTask18 (input = [1,1,2,2,3,4,4,5,5]){
   // Returns the unique elements of an array
