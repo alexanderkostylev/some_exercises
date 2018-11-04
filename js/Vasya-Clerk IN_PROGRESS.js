@@ -3,7 +3,7 @@
 https://www.codewars.com/kata/vasya-clerk/discuss/javascript\
 
 (function (){ 
-  const input = [25, 25, 25, 50, 100, 100];
+  const INPUT = [25, 25, 25, 50, 100, 100];
 
   // I used the source of the Tree from https://github.com/jamiebuilds/itsy-bitsy-data-structures
   class Tree {
@@ -38,8 +38,10 @@ https://www.codewars.com/kata/vasya-clerk/discuss/javascript\
       return newNode.id;
     }
   }
+
   const decisionTree = new Tree();
   const first = decisionTree.add(25);
-  console.log(decisionTree, first);
+  const two = decisionTree.add(25, 1);
+  // console.log(decisionTree, first);
 
 }());
