@@ -1,14 +1,42 @@
 "use strict"
-document.addEventListener("DOMContentLoaded", () => document.write(easyTask19()));
+document.addEventListener("DOMContentLoaded", () => document.write(easyTask20()));
 
-function easyTask19 (){
+function easyTask20() {
+  class LinkedList {
+    constructor(value) {
+      this.head = null;
+      this.length = 0;
+      this.addToHead(value);
+    }
+
+    addToHead(value) {
+      const newNode = {
+        value
+      };
+      newNode.next = this.head;
+      this.head = newNode;
+      this.length++;
+      return this;
+    }
+
+    //override
+    toString(){
+      return `Head: ${this.head.value}, Length: ${this.length}`;
+    }
+  }
+  const List = new LinkedList('first');
+  List.addToHead('two');
+  return List;
+}
+
+function easyTask19() {
   //Calling a function of type of foo(2)(3)()
   function foo() {
     let [result] = arguments;
-    return function f(){
-      if (arguments.length === 0){
+    return function f() {
+      if (arguments.length === 0) {
         return result;
-      }else {
+      } else {
         result += arguments[0];
         return f;
       }
@@ -17,18 +45,23 @@ function easyTask19 (){
   return foo(2)(3)(4)();
 }
 
-function easyTask18 (input = [1,1,2,2,3,4,4,5,5]){
+function easyTask18(input = [1, 1, 2, 2, 3, 4, 4, 5, 5]) {
   // Returns the unique elements of an array
   return input.filter((value, _, array) => array.indexOf(value) === array.lastIndexOf(value) ? value : null);
 }
 
-function easyTask17 (input = [1,1,2,2,3,4,4,5,5]){
+function easyTask17(input = [1, 1, 2, 2, 3, 4, 4, 5, 5]) {
   // Returns a new array by removing duplicate values in self via reduce method
   // or return input.filter((value) => ~ input.indexOf(value));
   return input.reduce((accumulator, value) => Array.from(accumulator).includes(value) ? accumulator : accumulator.concat(value), []);
 }
 
-function easyTask16(input = [[1],[[2,2]],3,3,3,[4,4,4,4]]){
+function easyTask16(input = [
+  [1],
+  [
+    [2, 2]
+  ], 3, 3, 3, [4, 4, 4, 4]
+]) {
   //array expansion
   return input.reduce((accumulator, current) => accumulator.concat(current));
 }
@@ -41,27 +74,29 @@ function easyTask15() {
 
 function easyTask14(n = 7) {
   //fibonacci through recursion
-    return n <= 1 ? n : easyTask14(n - 1) + easyTask14(n - 2);
+  return n <= 1 ? n : easyTask14(n - 1) + easyTask14(n - 2);
 }
 
 function easyTask13(num = 7) {
   //fibonacci through temp variable 
-  let current = 1, prev = 0, temp;
+  let current = 1,
+    prev = 0,
+    temp;
   let i = 1;
-    while (i < num){
-      temp = current + prev;
-      prev = current;
-      current = temp;
-      i++;
-    }
+  while (i < num) {
+    temp = current + prev;
+    prev = current;
+    current = temp;
+    i++;
+  }
   return current;
 }
 
 function easyTask12(num = 7) {
   //fibonacci through array
   let arr = [0, 1];
-  for (let i = 1; i < num; i++){
-    arr.push(arr[i]+ arr[i-1]);
+  for (let i = 1; i < num; i++) {
+    arr.push(arr[i] + arr[i - 1]);
   }
   return arr;
 }
