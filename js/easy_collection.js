@@ -1,5 +1,24 @@
 "use strict"
-document.addEventListener("DOMContentLoaded", () => document.write(easyTask20()));
+document.addEventListener("DOMContentLoaded", () => document.write(easyTask21()));
+
+function easyTask21(passLength = 8) {
+  //most random password generator
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  let arrayOfCodeCharacter = [];
+  let getRandomCodeOfAllChar = [];
+  const getRandomCodeOfNumberChar = getRandomInt.bind(null, 48, 58);
+  const getRandomCodeOfUpperChar = getRandomInt.bind(null, 65, 90);
+  const getRandomCodeOfLowerChar = getRandomInt.bind(null, 97, 123);
+
+  for (let i = 0; i < passLength; i++) {
+    getRandomCodeOfAllChar = [getRandomCodeOfNumberChar(), getRandomCodeOfUpperChar(), getRandomCodeOfLowerChar()];
+    arrayOfCodeCharacter.push(getRandomCodeOfAllChar[getRandomInt(0,3)]);
+  }
+  return String.fromCodePoint.apply(null, arrayOfCodeCharacter)
+}
 
 function easyTask20() {
   class LinkedList {
@@ -20,7 +39,7 @@ function easyTask20() {
     }
 
     //override
-    toString(){
+    toString() {
       return `Head: ${this.head.value}, Length: ${this.length}`;
     }
   }
