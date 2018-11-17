@@ -1,5 +1,26 @@
 "use strict"
-document.addEventListener("DOMContentLoaded", () => document.write(easyTask21()));
+document.addEventListener("DOMContentLoaded", () => document.write(easyTask22()));
+
+function easyTask22(){
+  // (2).plus(3).minus(1).multiply(4).divide(2) 
+
+  Number.prototype.plus = function (value) {
+    return this + value;
+  }
+  
+  Number.prototype.minus = function (value) {
+    return this - value;
+  }
+  Number.prototype.multiply = function (value) {
+    return this * value;
+  }
+  
+  Number.prototype.divide = function (value) {
+    return this / value;
+  }
+
+  return (2).plus(3).minus(1).multiply(4).divide(2);
+}
 
 function easyTask21(passLength = 8) {
   //most random password generator
