@@ -1,5 +1,15 @@
 "use strict"
-document.addEventListener("DOMContentLoaded", () => document.write(easyTask22()));
+document.addEventListener("DOMContentLoaded", () => document.write(easyTask23()));
+
+function easyTask23(){
+  function sum(){
+    arguments._reduce = [].reduce;
+    return arguments._reduce((accumulator, value) => {
+      return accumulator += value;
+    });
+  }
+  return sum('aa','bb','cc');
+}
 
 function easyTask22(){
   // (2).plus(3).minus(1).multiply(4).divide(2) 
